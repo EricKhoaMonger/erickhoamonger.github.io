@@ -6026,7 +6026,7 @@ var MovieService = /** @class */ (function () {
         this._http = _http;
     }
     MovieService.prototype.getNowShowings = function () {
-        var url = 'http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP01';
+        var url = 'https://cors-anywhere.herokuapp.com/http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP01';
         return this._http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return data.json(); }));
     };
     MovieService.prototype.getComingSoons = function () {
@@ -6040,7 +6040,7 @@ var MovieService = /** @class */ (function () {
     MovieService.prototype.createMovie = function (movie) {
         var url = 'http://sv2.myclass.vn/api/QuanLyPhim/ThemPhimMoi';
         var createMovieHeader = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
-        createMovieHeader.append('Content-Type', 'application/json; charser=utf-8');
+        createMovieHeader.append('Content-Type', 'application/json; charset=utf-8');
         return this._http.post(url, movie, { headers: createMovieHeader }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     MovieService.prototype.removeMovie = function (movieId) {
